@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trivia Quiz Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app" class="app-container" >
+
+    <!-- Start Screen -->
+    <section id="start-screen" class="screen screen--active" >
+      <div class="screen-content">
+        <h1 class="title">🧠 Trivia Challenge</h1>
+        <p class="description">Test your knowledge across a range of topics. Are you ready?</p>
+        <button id="start-btn" class="btn btn--primary">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="screen hidden" >
+      <div class="quiz-header">
+        <div class="question-count" id="question-counter">Question 1 of 5</div>
+        <div class="score-tracker">Score: <span id="score-value">0</span></div>
+      </div>
+
+      <div class="question-box">
+        <h2 id="question-text" class="question-text">Question goes here...</h2>
+        <ul id="answer-buttons" class="options-list" ></ul>
+      </div>
+
+      <div id="feedback" class="feedback hidden" ></div>
+      <button id="next-btn" class="btn btn--secondary hidden">Next Question</button>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results-screen" class="screen hidden" >
+      <div class="screen-content">
+        <h2 class="title">🎉 Quiz Complete!</h2>
+        <p id="score-text" class="final-score-text">You scored 4 out of 5!</p>
+
+        <div id="review-container" class="review-section">
+          <h3>🔍 Review Incorrect Answers</h3>
+          <ul id="incorrect-list" class="review-list"></ul>
+        </div>
+
+        <button id="restart-btn" class="btn btn--primary">Restart Quiz</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ✅ JavaScript -->
+  <script src="index.js" defer></script>
+</body>
+</html>
