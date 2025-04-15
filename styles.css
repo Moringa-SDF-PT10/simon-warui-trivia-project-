@@ -8,6 +8,10 @@
     padding: 2rem;
 }
 
+.hidden {
+    display: none !important;
+}  
+
 
 #start-screen .screen-content {
     background-color: #ffffff;
@@ -265,4 +269,19 @@
 #restart-btn:hover {
     background: linear-gradient(to right, #059669, #047857);
     transform: scale(1.03);
+}
+
+
+
+
+/* Correct answer (green) */
+.correct {
+    background-color: #4CAF50 !important; /* Green */
+    color: white;
+}
+
+/* Incorrect answer (red) */
+.incorrect {
+    background-color: #f44336 !important; /* Red */
+    color: white;
 }
