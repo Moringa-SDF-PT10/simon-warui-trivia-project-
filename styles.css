@@ -274,13 +274,13 @@
 
 
 
-/* Correct answer (green) */
+
 .correct {
     background-color: #4CAF50 !important; /* Green */
     color: white;
 }
 
-/* Incorrect answer (red) */
+
 .incorrect {
     background-color: #f44336 !important; /* Red */
     color: white;

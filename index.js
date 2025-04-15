@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const response = await fetch("https://opentdb.com/api.php?amount=5&type=multiple");
         const data = await response.json();
         
-        // Convert API format to your app format
+        // Convert API format to  app format
         questions = data.results.map(q => {
             const allOptions = [...q.incorrect_answers, q.correct_answer];
             const shuffled = allOptions.sort(() => Math.random() - 0.5); // shuffle options
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         });
     
-        showQuestion(); // Now show the first question
+        showQuestion();
     }
     
       
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startScreen.classList.add("hidden")
         quizScreen.classList.remove("hidden")
 
-        fetchQuestions(); // fetch from API instead of using hardcoded
+        fetchQuestions();
     })
 
     function showQuestion(){
@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
        
 
 
-        // clear previous options
+        // clearing previous options
 
         const optionList = document.getElementById("answer-buttons" )
         optionList.innerHTML = ""
 
-        // create buttons for each option
+        // creating buttons for each option
         currentQuestion.options.forEach(option => {
             const li = document.createElement("li")
             const button = document.createElement("button")
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentQuestion = questions[currentQuestionIndex]
         const isCorrect = selectedOption === currentQuestion.correct
 
-        // update score if correct
+        // updating score if correct
         if (isCorrect){
             score++
             scoreValue.textContent = score
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
 
-       // Add feedback class to all buttons
+       // Adding feedback class to all buttons
 
        const buttons = document.querySelectorAll(".option-btn")
        buttons.forEach(button => {
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
        })
 
-     // Show next button
+     // Showing next button
        const nextBtn = document.getElementById("next-btn")
        nextBtn.classList.remove("hidden") 
     }
@@ -162,14 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
         nextBtn.classList.add("hidden")
 
         
-        // Update score display
+        // Updating score display
         scoreValue.textContent = score;
 
-        // Show the quiz screen and hide results
+        // Showing the quiz screen and hiding results
         resultsScreen.classList.add("hidden")
         quizScreen.classList.remove("hidden")
 
-        // Load the first question again
+
         showQuestion()
 
 
